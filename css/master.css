@@ -1,0 +1,212 @@
+/* Mobile First Media Queries */
+
+body {
+  background: linear-gradient(45deg, rgba(142, 188, 255, 0.3), rgba(245,169,76,0.3), rgba(216, 91, 224, 0.3)), url(images/prague.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.container {
+  margin-top: 1rem;
+}
+
+.column.head-logo {
+  margin-top: 8rem;
+}
+
+.ver-line {
+  width: 2.5rem;
+  background-color: #ffc82d;
+  margin-left: 10px;
+}
+
+.hor-line {
+  height: 0.8rem;
+  opacity: 0.5;
+  background-color: white;
+  width: 85%;
+  float: left;
+  margin-top: 27px;
+  margin-left: 2rem;
+}
+
+.dao-logo {
+  height: 60px;
+  float: left;
+}
+
+.top-text {
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+}
+
+.intro {
+  padding-left: 1vw;
+      color: white;
+      font-size: 9rem;
+      line-height: 85px;
+      font-weight: 700;
+}
+
+.column.info {
+  color: white;
+  text-align: center;
+  font-weight: 100;
+  font-size: 6rem;
+}
+
+input.search-bar {
+  background-color: white;
+  border-color: #ffc82d;
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+.search-form {
+  width: 90rem;
+  margin: 0 auto;
+}
+
+.column.mix,.mix {
+  display: none;
+}
+
+.column.instr-txt {
+  display: none; }
+
+/* Base style */
+
+
+
+/*.search {
+  width:400px;
+}
+
+.square {
+  height: 120px;
+  width: 120px;
+  transform: rotate(45deg);
+  background-color: #ffc82d;
+}
+
+.square:hover {
+  background: linear-gradient(50deg, rgba(142, 188, 255, 1), rgba(245,169,76,1), rgba(216, 91, 224, 1) );
+}
+
+.option {
+  color: white;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.option-txt {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.squareL {
+  float: right;
+}
+
+.option-img {
+  height: 80px;
+  transform: rotate(-45deg);
+  margin-top: 20px;
+  margin-left: 20px;
+}*/
+
+
+/*.loc-box {
+  width: 200px;
+  height: 200px;
+  float: left;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 100;
+}
+
+.loc-img {
+  height: 120px;
+  margin-left: 35px;
+  margin-top: 20px;
+}*/
+
+/* Larger than mobile screen */
+@media (min-width: 40.0rem) {
+}
+
+/* Larger than tablet screen */
+@media (min-width: 80.0rem) {
+
+  .container {
+    margin-top: 1rem;
+  }
+
+  .ver-line {
+    width: 1rem;
+    background-color: #ffc82d;
+    margin-left: 10px;
+  }
+
+  .hor-line {
+    height: 0.2rem;
+    opacity: 0.5;
+    background-color: white;
+    width: 91%;
+    float: left;
+    margin-top: 12px;
+    margin-left: 1rem;
+  }
+
+  .dao-logo {
+    height: 25px;
+    float: left;
+  }
+
+  .top-text {
+    margin-top: 2rem;
+  }
+
+  .intro {
+    padding-left: 1vw;
+    color: white;
+    font-size: 4rem;
+    line-height: 40px;
+    font-weight: 700;
+  }
+
+  .column.info {
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    font-size: 4rem;
+  }
+
+  input.search-bar {
+    background-color: white;
+    border-color: #ffc82d;
+    border-width: 2px;
+    border-radius: 10px;
+  }
+
+  .search-form {
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .column.mix,.mix {
+    display: none;
+  }
+
+  .column.instr-txt {
+    display: none;
+
+
+}
+
+/* Larger than desktop screen */
+/*@media (min-width: 120.0rem) {}*/

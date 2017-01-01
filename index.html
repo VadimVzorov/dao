@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+  <!-- CSS Reset -->
+  <link rel="stylesheet" href="css/normalize.css">
+
+  <!-- Milligram CSS minified -->
+  <link rel="stylesheet" href="css/milligram/dist/milligram.min.css">
+
+  <link rel="stylesheet" href="css/master.css">
+
+  <title>Dao</title>
+
+
+
+</head>
+<body>
+<main>
+  <div class="container" id="container">
+
+    <div class="row" >
+      <div class="column head-logo">
+        <img src="css/images/dao-logo.png" class="dao-logo">
+        <div class="hor-line"></div>
+      </div>
+    </div>
+
+    <div class="row top-text">
+      <div class="ver-line"></div>
+      <div class="intro">
+        FIND <a style="color:#ffc82d">ADVENTURES</a><br>IN ANY CITY
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="column choose info">
+        Where do you want to look?
+      </div>
+
+      <div class="column instr-txt info">
+        Create your adventure mix
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="column search" id="search">
+          <form action="index.html" method="post" class="search-form" name="city" id="city-search">
+            <input type="text" class="search-bar" placeholder="Enter the name of the city">
+            <button type="submit" id="searchButton">Search</button>
+          </form>
+      </div>
+
+        <div class="column mix" id="mix">
+          <select class="cat1" name="cat1" id="cat1">
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Coffee & Tea">Coffee & Tea</option>
+            <option value="Drink">Drink</option>
+            <option value="Park">Park</option>
+            <option value="Books">Books</option>
+            <option value="Art">Art</option>
+            <option value="Museum">Museum</option>
+            <option value="Sights">Sights</option>
+          </select>
+        </div>
+
+        <div class="column mix" id="mix">
+          <select class="cat2" name="cat2" id="cat2">
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Coffee & Tea">Coffee & Tea</option>
+            <option value="Drink">Drink</option>
+            <option value="Park">Park</option>
+            <option value="Books">Books</option>
+            <option value="Art">Art</option>
+            <option value="Museum">Museum</option>
+            <option value="Sights">Sights</option>
+          </select>
+        </div>
+
+        <div class="column mix" id="mix">
+          <select class="cat3" name="cat3" id="cat3">
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Coffee & Tea">Coffee & Tea</option>
+            <option value="Drink">Drink</option>
+            <option value="Park">Park</option>
+            <option value="Books">Books</option>
+            <option value="Art">Art</option>
+            <option value="Museum">Museum</option>
+            <option value="Sights">Sights</option>
+          </select>
+        </div>
+
+      </div>
+
+      <button type="button" name="go" id="mix go" class="button mix go">Go</button>
+
+
+    <!-- <div class="row">
+      <div class="column">
+        <div class="option">
+          <div class="option-txt">
+            Near me
+          </div>
+          <div class="squareL">
+            <img class="option-img" src="css/images/place.png">
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="option">
+          <div class="option-txt">
+            Near me
+          </div>
+          <div class="squareR">
+            <img class="option-img" src="css/images/place.png">
+          </div>
+        </div>
+      </div>
+
+    </div> -->
+
+
+    <!-- <div class="row">
+      <div class="loc-options">
+        <form class="search">
+          <input type="text" placeholder="Where do you want to go?" >
+        </form>
+      </div>
+
+    </div> -->
+
+<!-- <div class="row">
+  <div class="loc-options">
+    <div class="loc-box">
+        <img src="css/images/search.png" class="loc-img">
+      Enter the city
+    </div>
+    <div class="loc-box">
+        <img src="css/images/place.png" class="loc-img">
+      Use current location
+    </div>
+  </div>
+</div> -->
+
+  </div>
+
+
+</main>
+
+  <script type="text/javascript" src="scripts/jquery.js"></script>
+  <script type="text/javascript" src="scripts/app.js"></script>
+</body>
+</html>

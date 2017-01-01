@@ -1,0 +1,26 @@
+
+
+
+
+
+
+@media mobile {
+
+}
+
+@media tablet {
+
+}
+
+
+.animateout{
+  display: none;
+  transition: all 0.2s;
+}
+
+
+
+
+.animatein {
+  /*/ content*/
+}
