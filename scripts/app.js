@@ -107,20 +107,31 @@ function hideElement(element) {
 
   // this element has class animatein, if it has animatein
   // remove class animate in and add calss animate out
-  ver $ele = $(element)
-  if($ele.hasclass('animatein')) {
+  $(element).addClass('hide-element');
 
-  }else {
-
-  }
-
-  $(elm)..addClass('animateout');
 }
 
-function showElement(element, callback) {
-  $(element).show('fast')
+function animateOut(element, callback) {
+  $(element).addClass('animate-out');
+  setTimeout(function(){hideElement(element)}, 300);
+  callback();
 }
 
+function animateIn(element) {
+  setTimeout(function(){
+    $(element).removeClass('hide-element');
+  },300);
+  setTimeout(function(){
+    $(element).addClass('show-element');
+  },300);
+  setTimeout(function(){
+    $(element).addClass('animate-in')
+  },300);
+}
+
+function showElement(element) {
+  $(element).removeClass('hide-element');
+}
 
 //listen
 
@@ -138,13 +149,18 @@ $(document).ready(function(){
   // })
 
 
+
   $('#city-search').on('submit', function getLoc(){
     event.preventDefault();
     var location = $('#city-search').val();
     collectLocation(location);
-    hideElement('#search',showElement('.column.mix,.mix'));
+    animateOut('#search, #choose', function() {
+      console.log("done!!");
+    });
+    $("#search").bind("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(){
+      animateIn('.mix, #instr-txt');
+    })
   })
-
 
   $('#go').on('click', collectCat);
 

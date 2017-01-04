@@ -37,11 +37,11 @@
     </div>
 
     <div class="row">
-      <div class="column choose info">
-        Where do you want to look?
+      <div class="column choose info" id="choose">
+        Where do you want to go?
       </div>
 
-      <div class="column instr-txt info">
+      <div class="column instr-txt info hide-element" id="instr-txt">
         Create your adventure mix
       </div>
 
@@ -50,18 +50,19 @@
     <div class="row">
       <div class="column search" id="search">
           <form action="index.html" method="post" class="search-form" name="city" id="city-search">
-            <input type="text" class="search-bar" placeholder="Enter the name of the city">
-            <button type="submit" id="searchButton">Search</button>
+            <input type="text" class="search-bar" id="search-bar" placeholder="Enter the name of the city">
+            <button type="submit" id="searchButton" class="searchButton">Search</button>
           </form>
       </div>
 
-        <div class="column mix" id="mix">
+        <div class="column mix hide-element" id="mix">
           <select class="cat1" name="cat1" id="cat1">
             <option value="Breakfast">Breakfast</option>
-            <option value="Lunch">Lunch</option>
-            <option value="Dinner">Dinner</option>
-            <option value="Coffee & Tea">Coffee & Tea</option>
-            <option value="Drink">Drink</option>
+            <option value="Food">Food</option>
+            <option value="Coffee">Coffee & Tea</option>
+            <option value="Bar">Bar</option>
+            <option value="Beer">Beer</option>
+            <option value="Music">Music</option>
             <option value="Park">Park</option>
             <option value="Books">Books</option>
             <option value="Art">Art</option>
@@ -70,13 +71,14 @@
           </select>
         </div>
 
-        <div class="column mix" id="mix">
+        <div class="column mix hide-element" id="mix">
           <select class="cat2" name="cat2" id="cat2">
             <option value="Breakfast">Breakfast</option>
-            <option value="Lunch">Lunch</option>
-            <option value="Dinner">Dinner</option>
-            <option value="Coffee & Tea">Coffee & Tea</option>
-            <option value="Drink">Drink</option>
+            <option value="Food">Food</option>
+            <option value="Coffee">Coffee & Tea</option>
+            <option value="Bar">Bar</option>
+            <option value="Beer">Beer</option>
+            <option value="Music">Music</option>
             <option value="Park">Park</option>
             <option value="Books">Books</option>
             <option value="Art">Art</option>
@@ -85,13 +87,14 @@
           </select>
         </div>
 
-        <div class="column mix" id="mix">
+        <div class="column mix hide-element" id="mix">
           <select class="cat3" name="cat3" id="cat3">
             <option value="Breakfast">Breakfast</option>
-            <option value="Lunch">Lunch</option>
-            <option value="Dinner">Dinner</option>
-            <option value="Coffee & Tea">Coffee & Tea</option>
-            <option value="Drink">Drink</option>
+            <option value="Food">Food</option>
+            <option value="Coffee">Coffee & Tea</option>
+            <option value="Bar">Bar</option>
+            <option value="Beer">Beer</option>
+            <option value="Music">Music</option>
             <option value="Park">Park</option>
             <option value="Books">Books</option>
             <option value="Art">Art</option>
@@ -102,56 +105,7 @@
 
       </div>
 
-      <button type="button" name="go" id="mix go" class="button mix go">Go</button>
-
-
-    <!-- <div class="row">
-      <div class="column">
-        <div class="option">
-          <div class="option-txt">
-            Near me
-          </div>
-          <div class="squareL">
-            <img class="option-img" src="css/images/place.png">
-          </div>
-        </div>
-      </div>
-
-      <div class="column">
-        <div class="option">
-          <div class="option-txt">
-            Near me
-          </div>
-          <div class="squareR">
-            <img class="option-img" src="css/images/place.png">
-          </div>
-        </div>
-      </div>
-
-    </div> -->
-
-
-    <!-- <div class="row">
-      <div class="loc-options">
-        <form class="search">
-          <input type="text" placeholder="Where do you want to go?" >
-        </form>
-      </div>
-
-    </div> -->
-
-<!-- <div class="row">
-  <div class="loc-options">
-    <div class="loc-box">
-        <img src="css/images/search.png" class="loc-img">
-      Enter the city
-    </div>
-    <div class="loc-box">
-        <img src="css/images/place.png" class="loc-img">
-      Use current location
-    </div>
-  </div>
-</div> -->
+      <button type="button" name="go" id="go" class="button mix searchButton hide-element">Go</button>
 
   </div>
 
@@ -159,6 +113,7 @@
 </main>
 
   <script type="text/javascript" src="scripts/jquery.js"></script>
-  <script type="text/javascript" src="scripts/app.js"></script>
+  <!-- <script type="text/javascript" src="scripts/app.js"></script> -->
+  <script type="text/javascript" src="scripts/4sq.js"></script>
 </body>
 </html>
