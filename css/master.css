@@ -6,6 +6,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
 
 .hide-element {
@@ -102,6 +103,72 @@ input.search-bar {
   width: 90rem;
   margin: 0 auto;
   margin-top: 3rem;
+}
+
+.card {
+  width: 30rem;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 auto;
+  height: 35rem;
+}
+
+.photo-card {
+  /*background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),url('https://irs2.4sqi.net/img/general/300x500/114907_58pf1hlILctREDw_hlIOPQGT5CNeH3UhcSUKfvydWt0.jpg');*/
+  /*background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30rem;*/
+  height: 20rem;
+  font-weight: 700;
+  color: white;
+  text-align: left;
+  font-size: 30px;
+  padding-top: 70px;
+  padding-left: 10px;
+  border-radius: 10px 10px 0 0;
+  line-height: 3.3rem;
+}
+
+.info {
+  /*padding-left: 10px;
+  padding-right: 10px;*/
+  color: black;
+  /*min-height: 140px;*/
+}
+
+.card-info {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 170px;
+
+}
+
+.description {
+  text-align: left;
+  font-style: italic;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  position: absolute;
+  width: 270px;
+}
+
+.description::before{
+  content: open-quote;
+}
+.description::after{
+  content: close-quote;
+}
+
+.address-info {
+  text-align: right;
+  position: relative;
+  top: 95px;
+}
+
+.title{
+  font-weight: 700;
 }
 
 /* Base style */

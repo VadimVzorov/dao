@@ -54,8 +54,35 @@ var fsq = {
   venuePhotos: 1,
   radius: 2000
 }
+//
+// function fetchData(obj) {
+//   $.ajax({
+//     url: obj.url,
+//     data: obj.data,
+//     method: obj.method || 'GET',
+//     success: obj.success,
+//     error: obj.error
+//   })
+// }
+//
+//
+// function getLocation() {
+//   var obj = {
+//     url: 'http://vadim.com',
+//     method: 'post',
+//     success: function() {
+//
+//     },
+//     error: function() {
+//
+//     }
+//   }
+//   fetchData(obj);
+// }
 
-function getData1(city, cat) {
+
+
+function getData1(city, cat, rad) {
   $.ajax({
     url: fsq.URL,
     data:{
@@ -74,6 +101,7 @@ function getData1(city, cat) {
       // pushResults(data);
       var random = Math.floor((Math.random() * 49));
       var results = data.response.groups[0].items[random];
+      console.log(results);
       state.results.push(results);
       getData2(fsq.cat[state.input[1]]);
     }
@@ -81,57 +109,102 @@ function getData1(city, cat) {
 }
 
 function getData2(cat) {
-  $.ajax({
-    url: fsq.URL,
-    data:{
-      ll: getCoor(0),
-      categoryId: cat,
-      limit:'50',
-      client_id: fsq.client_id,
-      client_secret: fsq.client_secret,
-      v: fsq.v,
-      locale: fsq.locale,
-      venuePhotos: fsq.venuePhotos,
-      radius: fsq.radius
-    },
-    success: function(data){
-      //store received data
-      //run function for cat3
-      pushResults(data);
-      getData3(fsq.cat[state.input[2]]);
-    }
-  })
+  var count = 1;
+  var rad = fsq.radius;
+  function getData(){
+    $.ajax({
+      url: fsq.URL,
+      data:{
+        ll: getCoor(0),
+        categoryId: cat,
+        limit:'50',
+        client_id: fsq.client_id,
+        client_secret: fsq.client_secret,
+        v: fsq.v,
+        locale: fsq.locale,
+        venuePhotos: fsq.venuePhotos,
+        radius: rad
+      },
+      success: function(data){
+        var resultsLength = data.response.groups[0].items.length;
+        var random = Math.floor((Math.random() * (resultsLength - 1)));
+        var results = data.response.groups[0].items[random];
+        console.log(results);
+        if (results === undefined) {
+          count++;
+          rad += count*1000;
+          getData()
+        } else {
+          state.results.push(results)
+          getData3(fsq.cat[state.input[2]]);
+        };
+      }
+    })
+  };
+  getData();
 }
 
 function getData3(cat) {
-  $.ajax({
-    url: fsq.URL,
-    data:{
-      ll: getCoor(1),
-      categoryId: cat,
-      limit:'50',
-      client_id: fsq.client_id,
-      client_secret: fsq.client_secret,
-      v: fsq.v,
-      locale: fsq.locale,
-      venuePhotos: fsq.venuePhotos,
-      radius: fsq.radius
-    },
-    success: function(data){
-      //store received data
-      //run function for cat3
-      pushResults(data);
-      console.log(state.results);
-    }
-  })
+  var count = 1;
+  var rad = fsq.radius;
+  function getData(){
+    $.ajax({
+      url: fsq.URL,
+      data:{
+        ll: getCoor(0),
+        categoryId: cat,
+        limit:'50',
+        client_id: fsq.client_id,
+        client_secret: fsq.client_secret,
+        v: fsq.v,
+        locale: fsq.locale,
+        venuePhotos: fsq.venuePhotos,
+        radius: rad
+      },
+      success: function(data){
+        var resultsLength = data.response.groups[0].items.length;
+        var random = Math.floor((Math.random() * (resultsLength - 1)));
+        var results = data.response.groups[0].items[random];
+        console.log(results);
+        if (results === undefined) {
+          count++;
+          rad += count*1000;
+          getData()
+        } else {
+          state.results.push(results);
+          console.log(state.results);
+          createCard(state.results);
+        };
+      }
+    })
+  };
+  getData();
 }
 
-function pushResults(data){
-  //pick random
-  var random = Math.floor((Math.random() * 49));
-  var results = data.response.groups[0].items[random];
-  state.results.push(results)
-
+function expandRadius(){
+  var plusRadius = 1000;
+  if (data === undefined) {
+    $.ajax({
+      url: fsq.URL,
+      data:{
+        ll: getCoor(1),
+        categoryId: cat,
+        limit:'50',
+        client_id: fsq.client_id,
+        client_secret: fsq.client_secret,
+        v: fsq.v,
+        locale: fsq.locale,
+        venuePhotos: fsq.venuePhotos,
+        radius: fsq.radius + plusRadius
+      },
+      success: function(data){
+        //store received data
+        //run function for cat3
+        pushResults(data);
+        console.log(state.results);
+      }
+    })
+  }
 }
 
 function getCoor(index){
@@ -146,7 +219,7 @@ function results(data) {
 }
 
 
-function filter(data, term){
+  function filter(data, term){
    data.filter(function(){
      return data.category === term
    })
@@ -158,7 +231,13 @@ function filter(data, term){
  var state = {
    location:'',
    input: [],
-   results:[]
+   results:[],
+   htmlCard:{
+     title:'<div class="column result-card"><div class="card"><div class="photo-card" style="background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),url(photoURL) center">replace</div>',
+     description: '<div class="card-info"><div class="description">replace</div>',
+     descriptionBlank: '<div class="card-info"><div class="description">Should be a very exciting place!</div>',
+     address:'<div class="address-info"><div class="title">Address</div><div class="address">replace</div></div></div></div></div>'
+   }
  }
 
  //modify
@@ -173,6 +252,37 @@ function filter(data, term){
    var cat3 = $('#cat3').val();
    state.input.push(cat1, cat2, cat3);
  }
+
+function createCard(array, callback) {
+  var html = [];
+  for (var i = 0; i < array.length; i++) {
+    var title = state.htmlCard.title.replace('replace', array[i].venue.name);
+    if (array[i].venue.photos.groups[0]) {
+      var title = title.replace('photoURL', "'" + array[i].venue.photos.groups[0].items[0].prefix + "300x200" + array[i].venue.photos.groups[0].items[0].suffix + "'");
+    } else {
+      var title = title.replace('photoURL', 'sky.jpg');
+    }
+    if (array[i].tips) {
+      var description = state.htmlCard.description.replace('replace', array[i].tips[0].text);
+    } else {
+      var description = state.htmlCard.descriptionBlank;
+    }
+    var address = state.htmlCard.address.replace('replace', array[i].venue.location.address);
+
+    // var title = title.replace('photoURL', "'" + array[i].venue.photos.groups[0].items[0].prefix + "300x200" + array[i].venue.photos.groups[0].items[0].suffix + "'");
+    // console.log(title);
+      // var description = state.htmlCard.description.replace('replace', array[i].tips[0].text);
+      // var address = state.htmlCard.address.replace('replace', array[i].venue.location.address);
+      var final = title + description + address;
+    console.log(final);
+    html.push(final);
+  }
+  console.log(html);
+state.finalHTML = html;
+var data = {}
+return showCard('#row-main');
+}
+
 
 
  //render
@@ -200,6 +310,10 @@ function filter(data, term){
    $(element).removeClass('hide-element');
  }
 
+function showCard(element) {
+  $(element).append(state.finalHTML);
+}
+
  //listen
 
  $(document).ready(function(){
@@ -213,6 +327,8 @@ function filter(data, term){
    $('#go').on('click', function(){
      console.log('click');
      collectCat();
-     getData1(state.location, fsq.cat[state.input[0]]); //if success launches getData2 and getData3
+     getData1(state.location, fsq.cat[state.input[0]]); //if success launches getData2 and getData3 -->     //  createCard(state.results, showCard('#row-main'));
+     hideElement('#instr-txt, .mix, #go');
+
    });
  });
