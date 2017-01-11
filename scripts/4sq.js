@@ -258,7 +258,7 @@ function createCard(array, callback) {
   for (var i = 0; i < array.length; i++) {
     var title = state.htmlCard.title.replace('replace', array[i].venue.name);
     if (array[i].venue.photos.groups[0]) {
-      var title = title.replace('photoURL', "'" + array[i].venue.photos.groups[0].items[0].prefix + "300x200" + array[i].venue.photos.groups[0].items[0].suffix + "'");
+      var title = title.replace('photoURL', "'" + array[i].venue.photos.groups[0].items[0].prefix + "700x350" + array[i].venue.photos.groups[0].items[0].suffix + "'");
     } else {
       var title = title.replace('photoURL', 'sky.jpg');
     }
