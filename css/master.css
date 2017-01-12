@@ -197,16 +197,14 @@ body {
   }
 
 
-}
-
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 40.0rem) {
 
 
  }
 
 
 /* Larger than tablet screen */
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 80.0rem) {
 
   .column.head-logo {
     margin-top: 1rem;
@@ -356,6 +354,205 @@ body {
   }
 
 
+}
+
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  body {
+    background: linear-gradient(45deg, rgba(142, 188, 255, 0.3), rgba(245,169,76,0.3), rgba(216, 91, 224, 0.3)), url(images/prague.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  /* check */
+  .hide-element {
+    display: none !important;
+  }
+
+  .show-element {
+    opacity: 0;
+  }
+
+  .animate-out {
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .animate-in {
+    opacity: 1 !important;
+    transition: 0.3s;
+  }
+
+  .column.head-logo {
+    margin-top: 1rem;
+  }
+
+  .row.main {
+    display: inline-block;
+  }
+
+  .cat {
+    height: 9rem;
+    color: black;
+    border: none;
+    font-size: 4rem;
+  }
+
+  .column.results-card {
+    margin-bottom: 2rem;
+  }
+
+    .container {
+      margin-top: 1rem;
+    }
+
+    .column.head-logo {
+      margin-top: 8rem;
+    }
+
+    .ver-line {
+      width: 2.5rem;
+      background-color: #ffc82d;
+      margin-left: 10px;
+    }
+
+    .hor-line {
+      height: 0.8rem;
+      opacity: 0.5;
+      background-color: white;
+      width: 85%;
+      float: left;
+      margin-top: 27px;
+      margin-left: 2rem;
+    }
+
+    .dao-logo {
+      height: 60px;
+      float: left;
+    }
+
+    .top-text {
+      margin-top: 8rem;
+    }
+
+    .intro {
+      padding-left: 1vw;
+          color: white;
+          font-size: 9rem;
+          line-height: 85px;
+          font-weight: 700;
+    }
+
+    .column.info {
+      color: white;
+      text-align: center;
+      font-weight: 100;
+      font-size: 6rem;
+      margin-top: 20rem;
+    }
+
+    input.search-bar {
+      background-color: white;
+      border: none;
+      border-radius: 10px;
+      height: 9rem;
+      font-size: 4rem;
+    }
+
+    .searchButton {
+      border-radius: 10px;
+          height: 9rem;
+          font-size: 4rem;
+          width: 100%;
+          background-color: rgba(39, 42, 43, 0.7);
+          border: none;
+          color: #ffc82d;
+    }
+
+    .searchButton:hover {
+      background-color: #ffc82d;
+      color: #272a2b;
+    }
+
+    .search-form {
+      width: 90rem;
+      margin: 0 auto;
+      margin-top: 3rem;
+    }
+
+    .card {
+      width: 70rem;
+      background-color: white;
+      border-radius: 10px;
+      margin: 0 auto;
+      margin-top: 6rem;
+      height: 65rem;
+    }
+
+    .photo-card {
+      /*background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),url('https://irs2.4sqi.net/img/general/300x500/114907_58pf1hlILctREDw_hlIOPQGT5CNeH3UhcSUKfvydWt0.jpg');*/
+      /*background-repeat: no-repeat;
+      background-position: center;
+      background-size: 30rem;*/
+      height: 35rem;
+      font-weight: 700;
+      color: white;
+      text-align: left;
+      font-size: 9rem;
+      padding-top: 3rem;
+      padding-left: 30px;
+      border-radius: 10px 10px 0 0;
+      line-height: 9rem;
+    }
+
+    .info {
+      /*padding-left: 10px;
+      padding-right: 10px;*/
+      color: black;
+      /*min-height: 140px;*/
+    }
+
+    .card-info {
+      font-size: 3rem;
+      line-height: 3rem;
+      padding-left: 30px;
+      padding-right: 30px;
+      height: 170px;
+
+    }
+
+    .description {
+      text-align: left;
+      font-style: italic;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      position: absolute;
+      width: 600px;
+    }
+
+    .description::before{
+      content: open-quote;
+    }
+    .description::after{
+      content: close-quote;
+    }
+
+    .address-info {
+      text-align: right;
+      position: relative;
+      top: 215px;
+    }
+
+    .title{
+      font-weight: 700;
+    }
+
+    select {
+      background-color: white;
+    }
 }
 
 /* Larger than desktop screen */
