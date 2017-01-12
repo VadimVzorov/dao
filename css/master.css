@@ -199,14 +199,14 @@ body {
 
 }
 
-@media only screen and (min-width: 40.0rem) {
+@media only screen and (min-width: 400px) {
 
 
  }
 
 
 /* Larger than tablet screen */
-@media only screen and (min-width: 80.0rem) {
+@media only screen and (min-width: 800px) {
 
   .column.head-logo {
     margin-top: 1rem;
